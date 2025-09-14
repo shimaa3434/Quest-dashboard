@@ -15,7 +15,6 @@ const Signup = () => {
     const navigate = useNavigate()
      const validateForm = () => {
     const newErrors = {}
-    const regex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!values.username.trim()) {
       newErrors.username = "username is required"
     }
@@ -24,8 +23,6 @@ const Signup = () => {
     } 
     if (!values.password.trim()) {
       newErrors.password = "password is required"
-    } else if(!regex.test(values.password) ){
-        newErrors.password = "The password must contain an uppercase letter, a lowercase letter, a number, a special character, and be at least 8 characters long."
     }
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0 // يرجع true لو مفيش أخطاء
