@@ -14,9 +14,9 @@ const handleSubmit =(e)=>{
     axios.post('https://dummyjson.com/products/add', values)
     .then(res => {
         console.log(res)
-        navigate("/", { state: { message: "تم الاضافة بنجاح ✅" ,type: "success"} })
+        navigate("/products", { state: { message: "تم الاضافة بنجاح ✅" ,type: "success"} })
     }).catch(err => {
-    navigate("/", { state: { message: "حدث خطأ أثناء الاضافة ❌", type: "error" } });
+    navigate("/products", { state: { message: "حدث خطأ أثناء الاضافة ❌", type: "error" } });
   });
 }
   return (
